@@ -1,24 +1,25 @@
-import logo from './logo.svg';
+import logo from './loopzLogoTemp.png';
+import leechLogo from './leechLogo.png'
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <>
+          <div className="App">
+
+              <img src={logo} className="App-logo" alt="logo"/>
+              <p className="loopz-name">Loopz</p>
+              <h1>Coming soon!</h1>
+
+              <footer className="footerContainer">
+                  <div className="logoContainer">
+                      <img src={leechLogo} className="Leech-logo" alt="logo"/>
+                      <span className="logoText">Leechy</span>
+                  </div>
+              </footer>
+          </div>
+      </>
+
   );
 }
 

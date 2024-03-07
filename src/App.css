@@ -1,28 +1,71 @@
 .App {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  background-color: #000B0D;
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Height of the viewport */
+  width: 100vw; /* Width of the viewport */
+}
+
+body {
+  background-color: #111;
+}
+
+
+h1 {
+  font-size: 40px;
+  text-transform: uppercase;
+  font-family: 'Gambetta', serif;
+  letter-spacing: -3px;
+  transition: 700ms ease;
+  font-variation-settings: "wght" 311;
+  margin-bottom: 0.8rem;
+  color: mintcream;
+  outline: none;
   text-align: center;
 }
 
+h1:hover {
+  font-variation-settings: "wght" 582;
+  letter-spacing: 1px;
+}
+
+.loopz-name {
+  color: linear-gradient(to right, #0b7bc7, #033569); /* Gradient from light blue to dark blue */
+  font-size: 20px;
+  text-transform: uppercase;
+  font-family: 'Gambetta', serif;
+  transition: 700ms ease;
+  font-variation-settings: "wght" 311;
+  margin-bottom: 0.8rem;
+  outline: none;
+  text-align: center;
+  font-variation-settings: "wght" 311;
+  letter-spacing: 3px;
+
+
+}
+
+.loopz-name:hover {
+  font-variation-settings: "wght" 582;
+  letter-spacing: 9px;
+}
+
 .App-logo {
-  height: 40vmin;
+  height: 20vmin;
   pointer-events: none;
+  margin-bottom: 17px; /* Adjust margin to move the logo up */
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    animation: App-logo-spin infinite 120s linear;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
 .App-link {
   color: #61dafb;
@@ -35,4 +78,53 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.haederContainer {
+  margin-bottom: auto;
+}
+
+.footerContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  gap: 5px;
+  margin-top: 15%;
+  padding-bottom: 0%;
+}
+
+
+
+.logoContainer {
+  position: relative;
+  display: inline-flex; /* Adjusted to inline-flex for better alignment */
+  align-items: center;
+  cursor: pointer;
+}
+
+.Leech-logo {
+  height: 5vmin; /* Adjust based on your preference */
+  transform: translateX(0%); /* Start from left, hidden */
+  transition: transform 1s ease; /* Ensures a smooth transition */
+  border-radius: 10px; /* Adjust the pixel value to control the roundness */
+}
+
+.logoText {
+  position: absolute;
+  white-space: nowrap;
+  transform: translateX(0%); /* Start from left, hidden */
+  opacity: 0; /* Make text invisible initially */
+  transition: transform 1s ease, opacity 0.5s ease; /* Smooth transition for sliding and fading */
+  left: 0; /* Position text at the left */
+}
+
+.logoContainer:hover .logoText {
+  transform: translateX(10%); /* End position for the text */
+  opacity: 1; /* Make text visible on hover */
+}
+
+.logoContainer:hover .Leech-logo {
+  transform: translateX(-40px); /* Move the logo to the right */
 }
