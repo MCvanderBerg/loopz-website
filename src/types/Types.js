@@ -8,4 +8,6 @@ export const Router = {
     Music: "/Music",
     Social: "/Social",
     Comedy: "/Comedy",
+    EventDetail: "/EventDetail"
+
 }

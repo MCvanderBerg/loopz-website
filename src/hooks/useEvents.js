@@ -2,11 +2,10 @@ import {useEffect, useState} from "react";
 import sport from "../assets/Sports.webp"
 import EventCard from "../components/EventCard";
 import useQuery from "./useQuery";
+import baseUrl from "../configs/connect"
 
-const useEvents = () => {
-    const [events, setEvents] = useState(null)
-    const eventsData = useQuery("http://localhost:4000/api/event/events")
-
+const useEvents = (setEvents) => {
+    const eventsData = useQuery(`${baseUrl}/event/events`)
     useEffect(() => {
         const processData = () => {
             const temp = (eventsData || []).map((event) => {
@@ -34,9 +33,7 @@ const useEvents = () => {
         }
 
         processData()
-    }, []);
-
-    return events
+    }, [eventsData]);
 }
 
 export default useEvents

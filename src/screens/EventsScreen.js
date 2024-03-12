@@ -7,22 +7,24 @@ import "./EventsScreen.css";
 import { useQuery, useEvents } from "../hooks/customHooks"
 
 
-
 const EventsScreen = () => {
-    const events = useEvents()
+    const [events, setEvents] = useState(null)
+    
+    useEvents(setEvents)
+
+    if ((events || []).length == 0) {
+        return <>Nothing to show</>
+    }
+
 
     return (
         <div className="MainContent">
-            {events && events.length > 0 ? (
-                events.map((event, index) => (
-                    <div key={index}>
-                        {/* Render each event */}
-                        {event}
-                    </div>
-                ))
-            ) : (
-                <p>No events available</p>
-            )}
+            {events.map((event, index) => (
+                <div key={index}>
+                    {/* Render each event */}
+                    {event}
+                </div>
+            ))}
         </div>
     )
 }

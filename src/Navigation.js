@@ -7,6 +7,7 @@ import CategoriesScreen from "./screens/CategoriesScreen";
 import MapsScreen from "./screens/MapScreen";
 import AccountScreen from "./screens/AccountScreen";
 import CategoryScreen from "./screens/CategoryScreen";
+import EventDetailScreen from "./screens/EventDetailScreen";
 
 const Navigation = () => {
     return (
@@ -19,6 +20,7 @@ const Navigation = () => {
                     <Route exact path={Router.Maps} element={<MapsScreen/>}/>
                     <Route exact path={Router.Account} element={<AccountScreen/>}/>
                     <Route exact path={`${Router.Categories}/${Router.Category}`} element={<CategoryScreen/>}/>
+                    <Route exact path={`${Router.EventDetail}/:id`} element={<EventDetailScreen/>}/>
                 </Route>
             </Routes>
         </div>
