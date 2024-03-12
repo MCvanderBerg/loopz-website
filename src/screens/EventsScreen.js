@@ -3,59 +3,26 @@ import comefyImage from "../assets/Comedy.webp"
 import {useEffect, useState} from "react";
 import bullvsShark from "../assets/bullsVSSharks.jpeg";
 import daveChappelleShow from "../assets/daveChappelleShow.webp"
-import EventCard from "../components/EventCard";
-import "./EventsScreen";
+import "./EventsScreen.css";
+import { useQuery, useEvents } from "../hooks/customHooks"
 
-const eventsData = [
-    {
-        id: 1,
-        title: "Bulls vs Sharks",
-        category: "Sports",
-        img:  bullvsShark
-    },
-    {
-        id: 2,
-        title: "Dave Chappelle",
-        category: "Comedy",
-        img:  daveChappelleShow
-    },
-    {
-        id: 3,
-        title: "Drinks at peer",
-        category: "Social",
-        img:  comefyImage
-    },
-    {
-        id: 4,
-        title: "Bulls vs Sharks",
-        category: "Sports",
-        img:  sportsImage
-    },
-];
 
 
 const EventsScreen = () => {
-
-    const [events, setEvents] = useState(null)
-
-    useEffect(() => {
-        const eventsJSX = eventsData.map(event => {
-            return (
-                    <EventCard
-                        title={event.title}
-                        id={event.id}
-                        category={event.category}
-                        img={event.img}/>
-            )
-        })
-
-        setEvents(eventsJSX)
-    }, []);
-
+    const events = useEvents()
 
     return (
         <div className="MainContent">
-            {events && events.map(event => event)}
+            {events && events.length > 0 ? (
+                events.map((event, index) => (
+                    <div key={index}>
+                        {/* Render each event */}
+                        {event}
+                    </div>
+                ))
+            ) : (
+                <p>No events available</p>
+            )}
         </div>
     )
 }
