@@ -1,0 +1,55 @@
+.eventCard {
+    display: inline-block;
+    margin: 4%;
+    /*padding: 2%;*/
+    border-width: 2px;
+    border-style: solid;
+    border-color: #000b0d;
+    border-radius: 20px;
+    background-color: #F7F8F2;
+}
+
+p {
+    color: #000b0d;
+}
+
+.eventCard:hover {
+    transform: scale(1.05); /* Example: increase the size by 10% */
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 1.5); /* Example: Add a shadow effect */
+}
+
+
+
+.eventImage {
+    height: 250px;
+    width: 250px;
+    /*border-radius: 15px;*/
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-color: #000b0d;
+    border-bottom-width: 1;
+    border-bottom-style: solid;
+    transition: transform 0.3s ease;
+    transition: box-shadow 0.2s ease; /* Add transition for smooth animation */
+}
+
+.eventImage:hover {
+    /*transform: scale(1.05); !* Example: increase the size by 10% *!*/
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 1.5); /* Example: Add a shadow effect */
+}
+
+.eventText {
+    color: black;
+
+}
+
+.eventText:hover {
+    color: black;
+}
+
+.eventInfo {
+    transition: transform 0.3s ease;
+    transition: box-shadow 0.2s ease; /* Add transition for smooth animation */
+}
+
+

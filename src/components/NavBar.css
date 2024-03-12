@@ -1,0 +1,28 @@
+.navBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 94%;
+    height: 10%;
+    background-color: #00005E; /* Change the background color to blue */
+    padding-left: 3%;
+    padding-right: 3%;
+    border: 2px solid #333;
+}
+
+p {
+    color: mintcream;
+}
+
+.logo {
+    border-radius: 10px;
+    padding-bottom: 1%;
+    padding-top: 1%;
+    max-width: 4%;
+}
+
+li :hover{
+    color: white;
+}
+

@@ -1,0 +1,38 @@
+.Categories {
+    padding-top: 2%; /* Use hyphen (-) instead of camelCase */
+    margin-bottom: 3%;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    justify-content: center; /* Use hyphen (-) instead of camelCase */
+    background-color: #183E4B;
+    margin-left: 23%;
+    margin-right: 23%;
+    padding-bottom: 20%;
+}
+
+.CategoriesRow {
+    display: flex;
+    flex-direction: Row;
+    flex-wrap: nowrap; /* Prevent wrapping */
+}
+
+.TextLabel {
+    color:black;
+    font-weight: bold;
+}
+
+.CategoriesLabel {
+    background-color: #61D9FB;
+    margin: 3%;
+    padding-top: 0.1%;
+    padding-bottom: 0.1%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 10px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #000b0d;
+
+}

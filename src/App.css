@@ -1,130 +1,36 @@
 .App {
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-  background-color: #000B0D;
-  display: flex;
-  flex-direction: column;
-  height: 100vh; /* Height of the viewport */
-  width: 100vw; /* Width of the viewport */
+  background-color: #61dafb;
 }
 
-body {
-  background-color: #111;
+.goBackButton {
+  left: 3%;
+  width: 3%;
+  background-color: #FFFFFA;
+  color: #2F526B;
+  margin-left: 3%;
+  margin-bottom: 3%;
+  border-radius: 50%;
+  padding: 1%; /* Adjust padding for button size */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Add initial shadow effect */
+  transform: translateZ(0); /* Ensure hardware acceleration for smoother animation */
+  transition: transform 0.3s, box-shadow 0.3s; /* Add transition for smoother animation */
 }
 
-
-h1 {
-  font-size: 40px;
-  text-transform: uppercase;
-  font-family: 'Gambetta', serif;
-  letter-spacing: -3px;
-  transition: 700ms ease;
-  font-variation-settings: "wght" 311;
-  margin-bottom: 0.8rem;
-  color: mintcream;
-  outline: none;
-  text-align: center;
+.goBackButton:hover {
+  transform: scale(1.1); /* Scale up the button on hover for a pop effect */
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 1.4); /* Adjust shadow effect on hover */
 }
 
-h1:hover {
-  font-variation-settings: "wght" 582;
-  letter-spacing: 1px;
-}
-
-.loopz-name {
-  color: linear-gradient(to right, #0b7bc7, #033569); /* Gradient from light blue to dark blue */
-  font-size: 20px;
-  text-transform: uppercase;
-  font-family: 'Gambetta', serif;
-  transition: 700ms ease;
-  font-variation-settings: "wght" 311;
-  margin-bottom: 0.8rem;
-  outline: none;
-  text-align: center;
-  font-variation-settings: "wght" 311;
-  letter-spacing: 3px;
-
-
-}
-
-.loopz-name:hover {
-  font-variation-settings: "wght" 582;
-  letter-spacing: 9px;
-}
-
-.App-logo {
-  height: 20vmin;
-  pointer-events: none;
-  margin-bottom: 17px; /* Adjust margin to move the logo up */
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 120s linear;
-  }
-}
-
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.haederContainer {
-  margin-bottom: auto;
-}
-
-.footerContainer {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  font-size: 20px;
-  gap: 5px;
-  margin-top: 15%;
-  padding-bottom: 0%;
-}
-
-
-
-.logoContainer {
-  position: relative;
-  display: inline-flex; /* Adjusted to inline-flex for better alignment */
-  align-items: center;
-  cursor: pointer;
-}
-
-.Leech-logo {
-  height: 5vmin; /* Adjust based on your preference */
-  transform: translateX(0%); /* Start from left, hidden */
-  transition: transform 1s ease; /* Ensures a smooth transition */
-  border-radius: 10px; /* Adjust the pixel value to control the roundness */
-}
-
-.logoText {
-  position: absolute;
-  white-space: nowrap;
-  transform: translateX(0%); /* Start from left, hidden */
-  opacity: 0; /* Make text invisible initially */
-  transition: transform 1s ease, opacity 0.5s ease; /* Smooth transition for sliding and fading */
-  left: 0; /* Position text at the left */
-}
-
-.logoContainer:hover .logoText {
-  transform: translateX(10%); /* End position for the text */
-  opacity: 1; /* Make text visible on hover */
-}
-
-.logoContainer:hover .Leech-logo {
-  transform: translateX(-40px); /* Move the logo to the right */
+.MainContent {
+    display: flex;
+    justify-content: center;
+    padding-top: 2%; /* Use hyphen (-) instead of camelCase */
+    margin-bottom: 3%;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    justify-content: center; /* Use hyphen (-) instead of camelCase */
+    background-color: #183E4B;
+    /*margin-left: 23%;*/
+    /*margin-right: 23%;*/
+    padding-bottom: 20%;
 }
