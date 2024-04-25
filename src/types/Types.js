@@ -1,6 +1,6 @@
 export const Router = {
     Events: "/",
-    MyEvents: "/MyEvents",
+    MyEvents: "/myEvents",
     Categories: "/Categories",
     Category: "/Category",
     Maps: "/Maps",
@@ -8,6 +8,7 @@ export const Router = {
     Music: "/Music",
     Social: "/Social",
     Comedy: "/Comedy",
-    EventDetail: "/EventDetail"
-
+    EventDetail: "/EventDetail",
+    Login: "/login",
+    Signup: "/signup"
 }

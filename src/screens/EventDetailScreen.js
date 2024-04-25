@@ -11,7 +11,7 @@ const EventDetailScreen = () => {
     const { id } = useParams()
 
    
-    const eventData = useQuery(`${baseUrl}/event?id=${id}`)
+    const eventData = useQuery(`/event?id=${id}`)
     useEffect(() => {
         setEvent((eventData || [])[0])
     },[eventData])

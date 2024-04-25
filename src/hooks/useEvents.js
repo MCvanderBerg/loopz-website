@@ -5,7 +5,7 @@ import useQuery from "./useQuery";
 import baseUrl from "../configs/connect"
 
 const useEvents = (setEvents) => {
-    const eventsData = useQuery(`${baseUrl}/event/events`)
+    const eventsData = useQuery(`/event/events`)
     useEffect(() => {
         const processData = () => {
             const temp = (eventsData || []).map((event) => {
