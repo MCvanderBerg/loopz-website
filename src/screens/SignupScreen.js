@@ -13,7 +13,7 @@ const SignupScreen = () => {
   };
 
   const goToLogin = () => {
-    navigate(Router.Login);
+    navigate(Router.login);
   };
 
   const changeEmail = (e) => {

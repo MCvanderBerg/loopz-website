@@ -23,7 +23,7 @@ const LoginScreen = () => {
   };
 
   const onRegisterClick = () => {
-    navigate(Router.Signup);
+    navigate(Router.signup);
   };
 
   const changeEmail = (e) => {
