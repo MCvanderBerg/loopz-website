@@ -1,11 +1,15 @@
 import { useState } from "react"
 import { useAuthContext } from "../context/AuthContext";
+import { Router } from "../types/Types";
+import { useNavigate } from "react-router-dom";
 
 
 const useLogin = () => {
     const [isLoading, setIsLoading] = useState(null);
     const [error, setError] = useState(null);
     const { dispatch }  = useAuthContext()
+    const navigate = useNavigate();
+
 
     const login = async (email, password) => {
         setIsLoading(true)
@@ -31,6 +35,7 @@ const useLogin = () => {
         if (response.ok) {
             localStorage.setItem('session', JSON.stringify(json))
             dispatch({ type: "LOGIN", payload: json })
+            navigate(Router.events)
             setIsLoading(false)
         }
     }

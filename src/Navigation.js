@@ -11,6 +11,8 @@ import LoginScreen from "./screens/LoginScreen";
 import SignupScreen from "./screens/SignupScreen";
 import { CreateLocationScreen } from "./screens/CreateLocationScreen";
 import { CreateScreen } from "./screens/CreateScreen";
+import SettingsScreen from "./screens/SettingsScreen";
+import UserInfo from "./screens/UserInfoScreen";
 
 const Navigation = () => {
 
@@ -20,6 +22,14 @@ const Navigation = () => {
         <Route
           path="/"
           element={<EventsScreen />}
+        />
+        <Route
+          path={Router.settings}
+          element={<SettingsScreen />}
+        />
+        <Route
+          path={Router.userInfo}
+          element={<UserInfo />}
         />
         <Route
           exact

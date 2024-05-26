@@ -6,6 +6,7 @@ export const authReducer = (state, action) => {
     console.log(action.type)
     switch(action.type){
         case 'LOGIN': 
+            console.log(action.payload)
             return {
                 session: action.payload,
             }
@@ -21,7 +22,7 @@ export const authReducer = (state, action) => {
 
 export const AuthContextProvider = ({ children }) => {
     const [state, dispatch] = useReducer(authReducer, {
-        session: localStorage.getItem("session") || null,
+        session: JSON.parse(localStorage.getItem("session")) || null,
     })
 
     useEffect(()=> {
@@ -32,6 +33,8 @@ export const AuthContextProvider = ({ children }) => {
 
         console.log(session)
     },[])
+
+    console.log(state)
 
     return(
         <AuthContext.Provider value={{ ...state, dispatch }}>

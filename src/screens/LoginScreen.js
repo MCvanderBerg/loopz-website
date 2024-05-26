@@ -15,8 +15,6 @@ const LoginScreen = () => {
     console.log(email, password);
     try {
       await login(email, password);
-
-      navigate(Router.events)      
     } catch (err) {
       console.log(err, "couldn't login")
     }

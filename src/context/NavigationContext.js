@@ -27,9 +27,14 @@ export const NavigationProvider = ({ children }) => {
         navigate(page);
     };
 
+    const goBack = () => {
+        navigate(-1)
+    }
+
     // Define the context value
     const contextValue = {
         goToPage,
+        goBack
     };
 
     // Return the provider with children

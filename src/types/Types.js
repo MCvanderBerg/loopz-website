@@ -1,5 +1,7 @@
 export const Router = {
   events: "/",
+  settings: "/settings",
+  userInfo: "/userInfo",
   myEvents: "/myEvents",
   categories: "/Categories",
   category: "/Category",
