@@ -106,7 +106,20 @@ input.error {
     border: 1px solid var(--error);
 }
 
-/* navbar */
+
+
+
+
+
+
+
+
+
+/* 
+#####################################################################################
+navbar 
+#####################################################################################
+*/
 nav {
     display: flex;
     align-items: center;
@@ -115,9 +128,9 @@ nav a {
     margin-left: 10px;
 }
 nav button {
-    background: #fff;
-    color: var(--primary);
-    border: 2px solid var(--primary);
+    background: #008348;
+    color: #fff;
+    border: 2px solid black;
     padding: 6px 10px;
     border-radius: 4px;
     font-family: "Poppins";
@@ -125,7 +138,54 @@ nav button {
     font-size: 1em;
 }
 
-/* auth forms */
+nav button.logout {
+    background: #fff;
+    color: var(--primary);
+    border: 2px solid black;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-family: "Poppins";
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.navBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 94%;
+    height: 10%;
+    background: #00005E; /* Change the background color to blue */
+    padding-left: 3%;
+    padding-right: 3%;
+    border: 2px solid #333;
+}
+
+p {
+    color: mintcream;
+}
+
+.logo {
+    border-radius: 10px;
+    padding-bottom: 1%;
+    padding-top: 1%;
+    max-width: 4%;
+}
+
+li :hover{
+    color: white;
+}
+
+
+
+
+
+/* 
+#####################################################################################
+auth forms 
+#####################################################################################
+*/
 form.signup,
 form.Login {
     max-width: 400px;

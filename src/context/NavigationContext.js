@@ -9,12 +9,15 @@ export const NavigationProvider = ({ children }) => {
     const navigate = useNavigate(); // Get navigation function from react-router-dom
     const { session } = useAuthContext()
     const { pathname } = useLocation();
-    const noNavBarRequired = [Router.login, Router.signup];
+    const noSessionScreens = [Router.login, Router.signup];
 
     useEffect(() => {
-        console.log(pathname)
-        if (!session && !noNavBarRequired.includes(pathname)) {
+        if (!session) {
             navigate(Router.login)
+        }
+
+        if (session && noSessionScreens.includes(pathname)){
+            navigate(Router.events)
         }
     },[])
 

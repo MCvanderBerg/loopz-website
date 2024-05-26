@@ -13,7 +13,13 @@ const LoginScreen = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     console.log(email, password);
-    await login(email, password);
+    try {
+      await login(email, password);
+
+      navigate(Router.events)      
+    } catch (err) {
+      console.log(err, "couldn't login")
+    }
   };
 
   const onRegisterClick = () => {

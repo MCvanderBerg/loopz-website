@@ -19,7 +19,7 @@ const Navigation = () => {
       <Routes>
         <Route
           path="/"
-          element={<MyEventsScreen />}
+          element={<EventsScreen />}
         />
         <Route
           exact

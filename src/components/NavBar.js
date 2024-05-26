@@ -1,6 +1,5 @@
-import "./NavBar.css";
 import logo from "../assets/loopzLogoTemp.png";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Router } from "../types/Types";
 import { useAuthContext } from "../context/AuthContext";
 import useLogout from "../hooks/useLogout";
@@ -16,7 +15,7 @@ const NavBar = () => {
 
   const { logout } = useLogout();
 
-  const onClick = (location) => {
+  const onNavigate = (location) => {
     navigate(location);
   };
 
@@ -24,23 +23,20 @@ const NavBar = () => {
     logout();
   };
 
-  const { pathname } = useLocation();
-  const noNavBarRequired = [Router.Login, Router.Signup];
-
-  if (noNavBarRequired.includes(pathname)) {
+  if (!session) {
     return <></>;
   }
 
   return (
     <nav className="navBar">
       <img src={logo} alt="" className="logo" />
-      <p onClick={() => onClick(Router.Events)}>Events</p>
-      <p onClick={() => onClick(Router.MyEvents)}>MyEvents</p>
-      <p onClick={() => onClick(Router.Categories)}>Categories</p>
-      <p onClick={() => onClick(Router.Maps)}>Maps</p>
+      <button onClick={() => onNavigate(Router.events)}>Events</button>
+      <button onClick={() => onNavigate(Router.myEvents)}>MyEvents</button>
+      <button onClick={() => onNavigate(Router.categories)}>Categories</button>
+      <button onClick={() => onNavigate(Router.maps)}>Maps</button>
       {/* <p onClick={() => onClick(Router.Account)}>{user && user.email_address}</p> */}
       <div>
-        <button onClick={handleClick}>Log out</button>
+        <button onClick={handleClick} className="logout">Log out</button>
       </div>
     </nav>
   );

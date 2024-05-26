@@ -3,23 +3,25 @@ import { createContext, useReducer, useEffect, useContext  } from "react"
 export const AuthContext = createContext()
 
 export const authReducer = (state, action) => {
+    console.log(action.type)
     switch(action.type){
         case 'LOGIN': 
             return {
                 session: action.payload,
             }
         case 'LOGOUT':
+            console.log('here')
+
             return {
                 session: null
             }
         default: return state
-
     }
 }
 
 export const AuthContextProvider = ({ children }) => {
     const [state, dispatch] = useReducer(authReducer, {
-        session: null,
+        session: localStorage.getItem("session") || null,
     })
 
     useEffect(()=> {
@@ -27,14 +29,9 @@ export const AuthContextProvider = ({ children }) => {
         if (session) {
             dispatch({ type: "LOGIN", payload: session })
         }
+
+        console.log(session)
     },[])
-
-
-
-
-    
-
-    console.log(state)
 
     return(
         <AuthContext.Provider value={{ ...state, dispatch }}>
