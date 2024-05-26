@@ -1,7 +1,6 @@
-import {Route, Routes, Navigate} from "react-router-dom";
-import NavBar from "./components/NavBar";
+import { Route, Routes, Navigate, useNavigate, useLoc } from "react-router-dom";
 import EventsScreen from "./screens/EventsScreen";
-import {Router} from "./types/Types";
+import { Router } from "./types/Types";
 import MyEventsScreen from "./screens/MyEventsScreen";
 import CategoriesScreen from "./screens/CategoriesScreen";
 import MapsScreen from "./screens/MapScreen";
@@ -10,28 +9,61 @@ import CategoryScreen from "./screens/CategoryScreen";
 import EventDetailScreen from "./screens/EventDetailScreen";
 import LoginScreen from "./screens/LoginScreen";
 import SignupScreen from "./screens/SignupScreen";
-import { useAuthContext } from "./context/AuthContext";
-
+import { CreateLocationScreen } from "./screens/CreateLocationScreen";
+import { CreateScreen } from "./screens/CreateScreen";
 
 const Navigation = () => {
-    const { session } = useAuthContext()
 
-    return (
-        <div className="pages">
-            <Routes>
-                <Route path="/" element={session ? <MyEventsScreen/> : <Navigate to={Router.Login}/>}/>
-                <Route exact path={Router.Login} element={session ? <Navigate to={Router.Events}/> : <LoginScreen/> }/>
-                <Route exact path={Router.Signup} element={session ? <Navigate to={Router.Events}/> : <SignupScreen/>}/>
-                <Route exact path={Router.Events} element={session ? <EventsScreen/> : <Navigate to={Router.Login}></Navigate>}/>
-                <Route exact path={Router.MyEvents} element={<MyEventsScreen/>}/>
-                <Route exact path={Router.Categories} element={<CategoriesScreen/>}/>
-                <Route exact path={Router.Maps} element={<MapsScreen/>}/>
-                <Route exact path={Router.Account} element={<AccountScreen/>}/>
-                <Route exact path={`${Router.Categories}/${Router.Category}`} element={<CategoryScreen/>}/>
-                <Route exact path={`${Router.EventDetail}/:id`} element={<EventDetailScreen/>}/>
-            </Routes>
-        </div>        
-    )
-}
+  return (
+    <div className="pages">
+      <Routes>
+        <Route
+          path="/"
+          element={<MyEventsScreen />}
+        />
+        <Route
+          exact
+          path={Router.login}
+          element={<LoginScreen />}
+        />
+        <Route
+          exact
+          path={Router.signup}
+          element={<SignupScreen />}
+        />
+        <Route
+          exact
+          path={Router.create}
+          element={<CreateScreen />}
+        />
+        <Route
+          exact
+          path={Router.events}
+          element={<EventsScreen />}
+        />
+        <Route exact path={Router.myEvents} element={<MyEventsScreen />} />
+        <Route exact path={Router.categories} element={<CategoriesScreen />} />
+        <Route exact path={Router.maps} element={<MapsScreen />} />
+        <Route exact path={Router.account} element={<AccountScreen />} />
+        <Route
+          exact
+          path={Router.createLocation}
+          element={<CreateLocationScreen/>}
+          />
+        <Route
+          exact
+          path={`${Router.categories}/${Router.category}`}
+          element={<CategoryScreen />}
+        />
+        <Route
+          exact
+          path={`${Router.eventDetail}/:id`}
+          element={<EventDetailScreen />}
+        />
+
+      </Routes>
+    </div>
+  );
+};
 
 export default Navigation;

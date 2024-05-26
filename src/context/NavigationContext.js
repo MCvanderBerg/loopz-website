@@ -1,10 +1,23 @@
-import React, { createContext, useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { createContext, useContext, useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { useAuthContext } from './AuthContext';
+import { Router } from '../types/Types';
 
 const NavigationContext = createContext();
 
 export const NavigationProvider = ({ children }) => {
     const navigate = useNavigate(); // Get navigation function from react-router-dom
+    const { session } = useAuthContext()
+    const { pathname } = useLocation();
+    const noNavBarRequired = [Router.login, Router.signup];
+
+    useEffect(() => {
+        console.log(pathname)
+        if (!session && !noNavBarRequired.includes(pathname)) {
+            navigate(Router.login)
+        }
+    },[])
+
 
     // Define functions to be provided by the context
     const goToPage = (page) => {

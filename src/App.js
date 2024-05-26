@@ -1,21 +1,18 @@
-import './App.css';
-import NavBar from './components/NavBar';
+import "./App.css";
+import NavBar from "./components/NavBar";
 import { BrowserRouter } from "react-router-dom";
 import Navigation from "./Navigation";
-import {NavigationProvider} from "./context/NavigationContext";
-import { AuthContextProvider } from './context/AuthContext';
-
-
-
+import { NavigationProvider } from "./context/NavigationContext";
+import { AuthContextProvider } from "./context/AuthContext";
 
 function App() {
   return (
-    <div className='App'>
+    <div className="App">
       <BrowserRouter>
         <AuthContextProvider>
-        <NavBar/>
           <NavigationProvider>
-              <Navigation/>
+            <NavBar />
+            <Navigation />
           </NavigationProvider>
         </AuthContextProvider>
       </BrowserRouter>
